@@ -1,9 +1,12 @@
-package closure;
+package bulkops;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Iterations {
+import closure.Iterations;
+import closure.Shape;
+
+public class BulkOPs {
 	public static void main(String[] args){
 		List<Shape> shapes = new ArrayList<Shape>();
 		shapes.add(new Shape("RED"));
@@ -43,5 +46,16 @@ public class Iterations {
 		System.out.println(shapes.get(1).toString());
 		System.out.println(shapes.get(2).toString());
 		System.out.println(shapes.get(3).toString());
+		
+		
+		shapes.stream()
+		.filter(s -> s.getColor() == "BLUE")
+		.forEach(s -> {s.setColor("CYAN");});
+		
+		System.out.println(shapes.get(0).toString());
+		System.out.println(shapes.get(1).toString());
+		System.out.println(shapes.get(2).toString());
+		System.out.println(shapes.get(3).toString());
 	}
 }
+
