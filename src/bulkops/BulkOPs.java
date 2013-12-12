@@ -47,7 +47,10 @@ public class BulkOPs {
 		System.out.println(shapes.get(2).toString());
 		System.out.println(shapes.get(3).toString());
 		
-		
+		/*
+		 * Streams framework (java.util.stream) for aggregated operations
+		 * - make the solution close to question statements
+		 */
 		shapes.stream()
 		.filter(s -> s.getColor() == "BLUE")
 		.forEach(s -> {s.setColor("CYAN");});
