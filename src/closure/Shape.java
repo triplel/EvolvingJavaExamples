@@ -2,13 +2,15 @@ package closure;
 
 public class Shape {
 	private String color;
+	private String shape;
 	
 	public Shape(String color){
 		setColor(color);
+		this.shape = "triangle";
 	}
 	
 	public String toString(){
-		return color;
+		return "A " + color + " " + shape;
 	}
 	
 	public void setColor(String color){
@@ -20,5 +22,14 @@ public class Shape {
 	
 	public String getColor(){
 		return color;
+	}
+	
+	public void setShape(String shape){
+		if(color!=null)
+			this.shape = shape;
+	}
+	
+	public String getShape(){
+		return shape;
 	}
 }

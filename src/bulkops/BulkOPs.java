@@ -3,7 +3,6 @@ package bulkops;
 import java.util.ArrayList;
 import java.util.List;
 
-import closure.Iterations;
 import closure.Shape;
 
 public class BulkOPs {
@@ -13,6 +12,7 @@ public class BulkOPs {
 		shapes.add(new Shape("YELLOW"));
 		shapes.add(new Shape(null));
 		shapes.add(new Shape("RED"));
+		shapes.add(new Shape("GREEN"));
 		
 		/*
 		 * External Iteration:
@@ -29,6 +29,7 @@ public class BulkOPs {
 		System.out.println(shapes.get(1).toString());
 		System.out.println(shapes.get(2).toString());
 		System.out.println(shapes.get(3).toString());
+		System.out.println(shapes.get(4).toString());
 		
 		
 		/*
@@ -46,6 +47,7 @@ public class BulkOPs {
 		System.out.println(shapes.get(1).toString());
 		System.out.println(shapes.get(2).toString());
 		System.out.println(shapes.get(3).toString());
+		System.out.println(shapes.get(4).toString());
 		
 		/*
 		 * Streams framework (java.util.stream) for aggregated operations
@@ -55,10 +57,14 @@ public class BulkOPs {
 		.filter(s -> s.getColor() == "BLUE")
 		.forEach(s -> {s.setColor("CYAN");});
 		
-		System.out.println(shapes.get(0).toString());
-		System.out.println(shapes.get(1).toString());
-		System.out.println(shapes.get(2).toString());
-		System.out.println(shapes.get(3).toString());
+		shapes.stream().forEach(s -> {System.out.println(s.getColor());});
+		
+		shapes.stream().forEach(s -> {System.out.println(s.toString());});
+		
+		shapes.stream().filter(s -> s.getColor() == "CYAN").forEach(s -> {s.setShape("hexagon");});
+		
+		shapes.stream().forEach(s -> {System.out.println(s.toString());});
+		
 	}
 }
 

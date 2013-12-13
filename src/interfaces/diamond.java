@@ -50,7 +50,7 @@ interface E extends B, C {
 			return -100;
 		else
 			return str.length();
-	}
+	}	
 }
 
 interface F {
